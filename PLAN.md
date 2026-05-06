@@ -290,12 +290,25 @@ apexstore/
 
 ### Tổng quan
 ```
-Phase 1 — Foundation & UI Core    ██████████  100% ✅ (Hoàn thành — merged vào develop)
-Phase 2 — Cart, Auth & Checkout   ████████░░   80% ✅ (Core done — merged vào develop)
-Phase 3 — AI & Realtime           ░░░░░░░░░░    0% (Chưa bắt đầu)
-Phase 4 — 3D & Advanced Features  ░░░░░░░░░░    0% (Chưa bắt đầu)
-Phase 5 — Admin, Polish & Deploy  ░░░░░░░░░░    0% (Chưa bắt đầu)
+Phase 1 — Foundation & UI Core    ██████████  100% ✅ Hoàn thành  (merged → develop | commit 060a7a4)
+Phase 2 — Cart, Auth & Checkout   ████████░░   80% ✅ Core done   (merged → develop | commit d9e5145)
+Phase 3 — AI & Realtime           ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
+Phase 4 — 3D & Advanced Features  ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
+Phase 5 — Admin, Polish & Deploy  ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
+
+Tổng tiến độ dự án:  ████░░░░░░  ~38%
 ```
+
+### Nhánh Git hiện tại
+| Nhánh | Trạng thái | Ghi chú |
+|---|---|---|
+| `main` | ⬜ Chưa tạo | Chờ release cuối |
+| `develop` | 🔄 Active | Nhánh tích hợp chính |
+| `feature/phase-1-foundation` | ✅ Merged | → develop |
+| `feature/phase-2-cart-auth-checkout` | ✅ Merged | → develop |
+| `feature/phase-3-ai-realtime` | ⬜ Chưa bắt đầu | |
+| `feature/phase-4-3d-advanced` | ⬜ Chưa bắt đầu | |
+| `feature/phase-5-admin-deploy` | ⬜ Chưa bắt đầu | |
 
 ### Chi tiết theo Phase
 
