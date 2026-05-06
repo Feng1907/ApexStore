@@ -4,6 +4,7 @@ import './globals.css'
 import { Header } from '@/components/layout/header'
 import { Footer } from '@/components/layout/footer'
 import { QueryProvider } from '@/providers/query-provider'
+import { AiChatWidget } from '@/components/ai/ai-chat-widget'
 
 const geist = Geist({
   subsets: ['latin'],
@@ -33,6 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Header />
           <main className="flex-1">{children}</main>
           <Footer />
+          <AiChatWidget />
         </QueryProvider>
       </body>
     </html>
