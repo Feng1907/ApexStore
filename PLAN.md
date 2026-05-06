@@ -290,56 +290,87 @@ apexstore/
 
 ### Tổng quan
 ```
-Phase 1 — Foundation & UI Core    ░░░░░░░░░░  0%  (Chưa bắt đầu)
-Phase 2 — Cart, Auth & Checkout   ░░░░░░░░░░  0%  (Chưa bắt đầu)
-Phase 3 — AI & Realtime           ░░░░░░░░░░  0%  (Chưa bắt đầu)
-Phase 4 — 3D & Advanced Features  ░░░░░░░░░░  0%  (Chưa bắt đầu)
-Phase 5 — Admin, Polish & Deploy  ░░░░░░░░░░  0%  (Chưa bắt đầu)
+Phase 1 — Foundation & UI Core    ██████████  100% ✅ Hoàn thành  (merged → develop | commit 060a7a4)
+Phase 2 — Cart, Auth & Checkout   ████████░░   80% ✅ Core done   (merged → develop | commit d9e5145)
+Phase 3 — AI & Realtime           █████████░   90% ✅ Core done   (feature/phase-3-ai-realtime)
+Phase 4 — 3D & Advanced Features  ██████████  100% ✅ Hoàn thành   (feature/phase-4-3d-advanced)
+Phase 5 — Admin, Polish & Deploy  ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
+
+Tổng tiến độ dự án:  ████████░░  ~80%
 ```
+
+### Nhánh Git hiện tại
+| Nhánh | Trạng thái | Ghi chú |
+|---|---|---|
+| `main` | ⬜ Chưa tạo | Chờ release cuối |
+| `develop` | 🔄 Active | Nhánh tích hợp chính |
+| `feature/phase-1-foundation` | ✅ Merged | → develop |
+| `feature/phase-2-cart-auth-checkout` | ✅ Merged | → develop |
+| `feature/phase-3-ai-realtime` | 🔄 Đang làm | Gemini AI + Flash Sale |
+| `feature/phase-4-3d-advanced` | ✅ Merged | 3D viewer + Trade-in + Compare |
+| `feature/phase-5-admin-deploy` | ⬜ Chưa bắt đầu | |
 
 ### Chi tiết theo Phase
 
 #### Phase 1 — Foundation & UI Core
 | Task | Trạng thái | Ghi chú |
 |---|---|---|
-| Khởi tạo Next.js 15 + TypeScript | ⬜ Chưa làm | |
-| Setup Prisma + Supabase | ⬜ Chưa làm | |
-| ESLint / Prettier / Husky / CI | ⬜ Chưa làm | |
-| Header, Footer, Mobile Nav | ⬜ Chưa làm | |
-| Trang chủ (Homepage) | ⬜ Chưa làm | |
-| Trang danh sách sản phẩm | ⬜ Chưa làm | |
-| Trang chi tiết sản phẩm | ⬜ Chưa làm | |
+| Khởi tạo Next.js 16 + TypeScript + Tailwind v4 | ✅ Hoàn thành | Next.js 16.2.4, TS 5, Tailwind 4 |
+| Setup Prisma v7 + pg adapter | ✅ Hoàn thành | Schema đầy đủ 7 models |
+| ESLint / Prettier | ✅ Hoàn thành | Prettier + tailwindcss plugin |
+| Header (sticky, mobile nav, cart badge) | ✅ Hoàn thành | Framer Motion mobile menu |
+| Footer với link groups | ✅ Hoàn thành | |
+| UI primitives: Button, Badge, Skeleton | ✅ Hoàn thành | CVA variants |
+| Trang chủ: Hero, Perks, Categories, Featured | ✅ Hoàn thành | SSR + Suspense skeleton |
+| Trang danh sách: Grid + URL-synced filters | ✅ Hoàn thành | category, sort, storage filter |
+| Trang chi tiết: Gallery, variant, color swatch | ✅ Hoàn thành | Add to cart với animation |
+| Zustand cart store + localStorage | ✅ Hoàn thành | persist middleware |
+| TanStack Query provider | ✅ Hoàn thành | |
+| Seed data 7 sản phẩm Apple thực tế | ✅ Hoàn thành | |
+| 404 page | ✅ Hoàn thành | |
+| **Branch:** `feature/phase-1-foundation` → `develop` | ✅ Merged | commit `060a7a4` |
 
 #### Phase 2 — Cart, Auth & Checkout
 | Task | Trạng thái | Ghi chú |
 |---|---|---|
-| Zustand cart store | ⬜ Chưa làm | |
-| CartDrawer component | ⬜ Chưa làm | |
-| Supabase Auth (Email + Google) | ⬜ Chưa làm | |
-| Checkout flow 3 bước | ⬜ Chưa làm | |
-| Stripe + VNPAY Sandbox | ⬜ Chưa làm | |
-| Email xác nhận (Resend) | ⬜ Chưa làm | |
-| User Dashboard | ⬜ Chưa làm | |
+| CartDrawer slide-in (Framer Motion) | ✅ Hoàn thành | Quantity controls, empty state |
+| Cart page đầy đủ | ✅ Hoàn thành | Order summary, clear all |
+| Checkout 3-step (Info → Shipping → Payment) | ✅ Hoàn thành | Zod validation, animated transitions |
+| Login page (Email + Google OAuth) | ✅ Hoàn thành | Supabase SSR |
+| Register page (Email + confirmation) | ✅ Hoàn thành | |
+| Auth store (Zustand) | ✅ Hoàn thành | |
+| Stripe + VNPAY Sandbox | ⬜ Chưa làm | Cần API keys thực |
+| Email xác nhận (Resend) | ⬜ Chưa làm | Cần setup Resend |
+| User Dashboard | ⬜ Chưa làm | Phase 5 |
+| **Branch:** `feature/phase-2-cart-auth-checkout` → `develop` | ✅ Merged | commit `d9e5145` |
 
 #### Phase 3 — AI & Realtime
 | Task | Trạng thái | Ghi chú |
 |---|---|---|
-| AI Chat Widget UI | ⬜ Chưa làm | |
-| Gemini API + Streaming SSE | ⬜ Chưa làm | |
-| RAG pipeline (embed + pgvector) | ⬜ Chưa làm | |
-| Sentiment analysis + voucher | ⬜ Chưa làm | |
-| WebSocket server (Socket.io) | ⬜ Chưa làm | |
-| Flash Sale UI + countdown | ⬜ Chưa làm | |
-| Redis pub/sub stock sync | ⬜ Chưa làm | |
+| AI Chat Widget UI (floating button, panel) | ✅ Hoàn thành | Framer Motion, suggestions, clear chat |
+| Gemini API + Streaming SSE | ✅ Hoàn thành | `gemini-2.0-flash`, stream từng token |
+| RAG pipeline (query DB → inject context) | ✅ Hoàn thành | Lấy toàn bộ products làm context |
+| Sentiment analysis + auto-voucher | ✅ Hoàn thành | Detect từ khoá tiêu cực → offer voucher |
+| Flash Sale API + countdown timer | ✅ Hoàn thành | Hook `useCountdown` realtime |
+| Flash Sale UI: progress bar, FOMO badges | ✅ Hoàn thành | Stock bar, -X% badge |
+| Flash Sale page riêng `/flash-sale` | ✅ Hoàn thành | |
+| WebSocket Socket.io | ⬜ Chưa làm | Cần server riêng (Phase 5) |
+| Redis pub/sub stock sync | ⬜ Chưa làm | Cần Upstash (Phase 5) |
+| **Branch:** `feature/phase-3-ai-realtime` → `develop` | 🔄 Đang merge | |
 
 #### Phase 4 — 3D & Advanced Features
 | Task | Trạng thái | Ghi chú |
 |---|---|---|
-| React Three Fiber setup | ⬜ Chưa làm | |
-| ProductViewer3D + hotspots | ⬜ Chưa làm | |
-| Smart Trade-in form | ⬜ Chưa làm | |
-| Comparison tool | ⬜ Chưa làm | |
-| Advanced search | ⬜ Chưa làm | |
+| React Three Fiber + Drei + Three.js setup | ✅ Hoàn thành | |
+| ProductViewer3D: xoay 360°, auto-rotate | ✅ Hoàn thành | Model geometry iPhone built-in |
+| Hotspots tương tác (camera, Dynamic Island, USB-C) | ✅ Hoàn thành | hover tooltip |
+| Color switcher realtime trên model 3D | ✅ Hoàn thành | 4 màu Titanium |
+| Smart Trade-in 4-step form | ✅ Hoàn thành | 9 thiết bị, 4 tình trạng, tính chênh lệch |
+| Comparison tool `/compare` | ✅ Hoàn thành | So sánh 2-3 sản phẩm, bảng thông số |
+| CompareBar sticky bottom | ✅ Hoàn thành | Framer Motion, tối đa 3 sản phẩm |
+| Nút so sánh trên ProductCard | ✅ Hoàn thành | Toggle add/remove |
+| 3D Viewer tích hợp vào product detail | ✅ Hoàn thành | Chỉ hiện cho iPhone |
+| **Branch:** `feature/phase-4-3d-advanced` → `develop` | ✅ Merged | |
 
 #### Phase 5 — Admin, Polish & Deploy
 | Task | Trạng thái | Ghi chú |
