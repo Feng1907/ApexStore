@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic'
 import Link from 'next/link'
 import { ArrowRight, Zap, Shield, Truck } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { FlashSaleBanner } from '@/components/flash-sale/flash-sale-banner'
 import { Badge } from '@/components/ui/badge'
 import { ProductCard, ProductCardSkeleton } from '@/components/product/product-card'
 import { db } from '@/lib/db'
@@ -130,6 +131,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Flash Sale */}
+      <FlashSaleBanner />
 
       {/* Featured Products */}
       <section className="bg-zinc-50 px-4 py-14 sm:px-6">

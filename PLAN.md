@@ -292,11 +292,11 @@ apexstore/
 ```
 Phase 1 — Foundation & UI Core    ██████████  100% ✅ Hoàn thành  (merged → develop | commit 060a7a4)
 Phase 2 — Cart, Auth & Checkout   ████████░░   80% ✅ Core done   (merged → develop | commit d9e5145)
-Phase 3 — AI & Realtime           ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
+Phase 3 — AI & Realtime           █████████░   90% ✅ Core done   (feature/phase-3-ai-realtime)
 Phase 4 — 3D & Advanced Features  ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
 Phase 5 — Admin, Polish & Deploy  ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
 
-Tổng tiến độ dự án:  ████░░░░░░  ~38%
+Tổng tiến độ dự án:  ██████░░░░  ~60%
 ```
 
 ### Nhánh Git hiện tại
@@ -306,7 +306,7 @@ Tổng tiến độ dự án:  ████░░░░░░  ~38%
 | `develop` | 🔄 Active | Nhánh tích hợp chính |
 | `feature/phase-1-foundation` | ✅ Merged | → develop |
 | `feature/phase-2-cart-auth-checkout` | ✅ Merged | → develop |
-| `feature/phase-3-ai-realtime` | ⬜ Chưa bắt đầu | |
+| `feature/phase-3-ai-realtime` | 🔄 Đang làm | Gemini AI + Flash Sale |
 | `feature/phase-4-3d-advanced` | ⬜ Chưa bắt đầu | |
 | `feature/phase-5-admin-deploy` | ⬜ Chưa bắt đầu | |
 
@@ -347,13 +347,16 @@ Tổng tiến độ dự án:  ████░░░░░░  ~38%
 #### Phase 3 — AI & Realtime
 | Task | Trạng thái | Ghi chú |
 |---|---|---|
-| AI Chat Widget UI | ⬜ Chưa làm | |
-| Gemini API + Streaming SSE | ⬜ Chưa làm | |
-| RAG pipeline (embed + pgvector) | ⬜ Chưa làm | |
-| Sentiment analysis + voucher | ⬜ Chưa làm | |
-| WebSocket server (Socket.io) | ⬜ Chưa làm | |
-| Flash Sale UI + countdown | ⬜ Chưa làm | |
-| Redis pub/sub stock sync | ⬜ Chưa làm | |
+| AI Chat Widget UI (floating button, panel) | ✅ Hoàn thành | Framer Motion, suggestions, clear chat |
+| Gemini API + Streaming SSE | ✅ Hoàn thành | `gemini-2.0-flash`, stream từng token |
+| RAG pipeline (query DB → inject context) | ✅ Hoàn thành | Lấy toàn bộ products làm context |
+| Sentiment analysis + auto-voucher | ✅ Hoàn thành | Detect từ khoá tiêu cực → offer voucher |
+| Flash Sale API + countdown timer | ✅ Hoàn thành | Hook `useCountdown` realtime |
+| Flash Sale UI: progress bar, FOMO badges | ✅ Hoàn thành | Stock bar, -X% badge |
+| Flash Sale page riêng `/flash-sale` | ✅ Hoàn thành | |
+| WebSocket Socket.io | ⬜ Chưa làm | Cần server riêng (Phase 5) |
+| Redis pub/sub stock sync | ⬜ Chưa làm | Cần Upstash (Phase 5) |
+| **Branch:** `feature/phase-3-ai-realtime` → `develop` | 🔄 Đang merge | |
 
 #### Phase 4 — 3D & Advanced Features
 | Task | Trạng thái | Ghi chú |
