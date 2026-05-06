@@ -290,36 +290,59 @@ apexstore/
 
 ### Tổng quan
 ```
-Phase 1 — Foundation & UI Core    ░░░░░░░░░░  0%  (Chưa bắt đầu)
-Phase 2 — Cart, Auth & Checkout   ░░░░░░░░░░  0%  (Chưa bắt đầu)
-Phase 3 — AI & Realtime           ░░░░░░░░░░  0%  (Chưa bắt đầu)
-Phase 4 — 3D & Advanced Features  ░░░░░░░░░░  0%  (Chưa bắt đầu)
-Phase 5 — Admin, Polish & Deploy  ░░░░░░░░░░  0%  (Chưa bắt đầu)
+Phase 1 — Foundation & UI Core    ██████████  100% ✅ Hoàn thành  (merged → develop | commit 060a7a4)
+Phase 2 — Cart, Auth & Checkout   ████████░░   80% ✅ Core done   (merged → develop | commit d9e5145)
+Phase 3 — AI & Realtime           ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
+Phase 4 — 3D & Advanced Features  ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
+Phase 5 — Admin, Polish & Deploy  ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
+
+Tổng tiến độ dự án:  ████░░░░░░  ~38%
 ```
+
+### Nhánh Git hiện tại
+| Nhánh | Trạng thái | Ghi chú |
+|---|---|---|
+| `main` | ⬜ Chưa tạo | Chờ release cuối |
+| `develop` | 🔄 Active | Nhánh tích hợp chính |
+| `feature/phase-1-foundation` | ✅ Merged | → develop |
+| `feature/phase-2-cart-auth-checkout` | ✅ Merged | → develop |
+| `feature/phase-3-ai-realtime` | ⬜ Chưa bắt đầu | |
+| `feature/phase-4-3d-advanced` | ⬜ Chưa bắt đầu | |
+| `feature/phase-5-admin-deploy` | ⬜ Chưa bắt đầu | |
 
 ### Chi tiết theo Phase
 
 #### Phase 1 — Foundation & UI Core
 | Task | Trạng thái | Ghi chú |
 |---|---|---|
-| Khởi tạo Next.js 15 + TypeScript | ⬜ Chưa làm | |
-| Setup Prisma + Supabase | ⬜ Chưa làm | |
-| ESLint / Prettier / Husky / CI | ⬜ Chưa làm | |
-| Header, Footer, Mobile Nav | ⬜ Chưa làm | |
-| Trang chủ (Homepage) | ⬜ Chưa làm | |
-| Trang danh sách sản phẩm | ⬜ Chưa làm | |
-| Trang chi tiết sản phẩm | ⬜ Chưa làm | |
+| Khởi tạo Next.js 16 + TypeScript + Tailwind v4 | ✅ Hoàn thành | Next.js 16.2.4, TS 5, Tailwind 4 |
+| Setup Prisma v7 + pg adapter | ✅ Hoàn thành | Schema đầy đủ 7 models |
+| ESLint / Prettier | ✅ Hoàn thành | Prettier + tailwindcss plugin |
+| Header (sticky, mobile nav, cart badge) | ✅ Hoàn thành | Framer Motion mobile menu |
+| Footer với link groups | ✅ Hoàn thành | |
+| UI primitives: Button, Badge, Skeleton | ✅ Hoàn thành | CVA variants |
+| Trang chủ: Hero, Perks, Categories, Featured | ✅ Hoàn thành | SSR + Suspense skeleton |
+| Trang danh sách: Grid + URL-synced filters | ✅ Hoàn thành | category, sort, storage filter |
+| Trang chi tiết: Gallery, variant, color swatch | ✅ Hoàn thành | Add to cart với animation |
+| Zustand cart store + localStorage | ✅ Hoàn thành | persist middleware |
+| TanStack Query provider | ✅ Hoàn thành | |
+| Seed data 7 sản phẩm Apple thực tế | ✅ Hoàn thành | |
+| 404 page | ✅ Hoàn thành | |
+| **Branch:** `feature/phase-1-foundation` → `develop` | ✅ Merged | commit `060a7a4` |
 
 #### Phase 2 — Cart, Auth & Checkout
 | Task | Trạng thái | Ghi chú |
 |---|---|---|
-| Zustand cart store | ⬜ Chưa làm | |
-| CartDrawer component | ⬜ Chưa làm | |
-| Supabase Auth (Email + Google) | ⬜ Chưa làm | |
-| Checkout flow 3 bước | ⬜ Chưa làm | |
-| Stripe + VNPAY Sandbox | ⬜ Chưa làm | |
-| Email xác nhận (Resend) | ⬜ Chưa làm | |
-| User Dashboard | ⬜ Chưa làm | |
+| CartDrawer slide-in (Framer Motion) | ✅ Hoàn thành | Quantity controls, empty state |
+| Cart page đầy đủ | ✅ Hoàn thành | Order summary, clear all |
+| Checkout 3-step (Info → Shipping → Payment) | ✅ Hoàn thành | Zod validation, animated transitions |
+| Login page (Email + Google OAuth) | ✅ Hoàn thành | Supabase SSR |
+| Register page (Email + confirmation) | ✅ Hoàn thành | |
+| Auth store (Zustand) | ✅ Hoàn thành | |
+| Stripe + VNPAY Sandbox | ⬜ Chưa làm | Cần API keys thực |
+| Email xác nhận (Resend) | ⬜ Chưa làm | Cần setup Resend |
+| User Dashboard | ⬜ Chưa làm | Phase 5 |
+| **Branch:** `feature/phase-2-cart-auth-checkout` → `develop` | ✅ Merged | commit `d9e5145` |
 
 #### Phase 3 — AI & Realtime
 | Task | Trạng thái | Ghi chú |
