@@ -293,10 +293,10 @@ apexstore/
 Phase 1 — Foundation & UI Core    ██████████  100% ✅ Hoàn thành  (merged → develop | commit 060a7a4)
 Phase 2 — Cart, Auth & Checkout   ████████░░   80% ✅ Core done   (merged → develop | commit d9e5145)
 Phase 3 — AI & Realtime           █████████░   90% ✅ Core done   (feature/phase-3-ai-realtime)
-Phase 4 — 3D & Advanced Features  ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
+Phase 4 — 3D & Advanced Features  ██████████  100% ✅ Hoàn thành   (feature/phase-4-3d-advanced)
 Phase 5 — Admin, Polish & Deploy  ░░░░░░░░░░    0% ⬜ Chưa bắt đầu
 
-Tổng tiến độ dự án:  ██████░░░░  ~60%
+Tổng tiến độ dự án:  ████████░░  ~80%
 ```
 
 ### Nhánh Git hiện tại
@@ -307,7 +307,7 @@ Tổng tiến độ dự án:  ██████░░░░  ~60%
 | `feature/phase-1-foundation` | ✅ Merged | → develop |
 | `feature/phase-2-cart-auth-checkout` | ✅ Merged | → develop |
 | `feature/phase-3-ai-realtime` | 🔄 Đang làm | Gemini AI + Flash Sale |
-| `feature/phase-4-3d-advanced` | ⬜ Chưa bắt đầu | |
+| `feature/phase-4-3d-advanced` | ✅ Merged | 3D viewer + Trade-in + Compare |
 | `feature/phase-5-admin-deploy` | ⬜ Chưa bắt đầu | |
 
 ### Chi tiết theo Phase
@@ -361,11 +361,16 @@ Tổng tiến độ dự án:  ██████░░░░  ~60%
 #### Phase 4 — 3D & Advanced Features
 | Task | Trạng thái | Ghi chú |
 |---|---|---|
-| React Three Fiber setup | ⬜ Chưa làm | |
-| ProductViewer3D + hotspots | ⬜ Chưa làm | |
-| Smart Trade-in form | ⬜ Chưa làm | |
-| Comparison tool | ⬜ Chưa làm | |
-| Advanced search | ⬜ Chưa làm | |
+| React Three Fiber + Drei + Three.js setup | ✅ Hoàn thành | |
+| ProductViewer3D: xoay 360°, auto-rotate | ✅ Hoàn thành | Model geometry iPhone built-in |
+| Hotspots tương tác (camera, Dynamic Island, USB-C) | ✅ Hoàn thành | hover tooltip |
+| Color switcher realtime trên model 3D | ✅ Hoàn thành | 4 màu Titanium |
+| Smart Trade-in 4-step form | ✅ Hoàn thành | 9 thiết bị, 4 tình trạng, tính chênh lệch |
+| Comparison tool `/compare` | ✅ Hoàn thành | So sánh 2-3 sản phẩm, bảng thông số |
+| CompareBar sticky bottom | ✅ Hoàn thành | Framer Motion, tối đa 3 sản phẩm |
+| Nút so sánh trên ProductCard | ✅ Hoàn thành | Toggle add/remove |
+| 3D Viewer tích hợp vào product detail | ✅ Hoàn thành | Chỉ hiện cho iPhone |
+| **Branch:** `feature/phase-4-3d-advanced` → `develop` | ✅ Merged | |
 
 #### Phase 5 — Admin, Polish & Deploy
 | Task | Trạng thái | Ghi chú |
