@@ -3,7 +3,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { ShoppingBag, Star } from 'lucide-react'
+import { ShoppingBag, Star, GitCompare } from 'lucide-react'
+import { useCompareStore } from '@/stores/compare.store'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Skeleton } from '@/components/ui/skeleton'
@@ -22,6 +23,8 @@ export function ProductCard({ product }: ProductCardProps) {
       ? product.reviews.reduce((s, r) => s + r.rating, 0) / product.reviews.length
       : 0
   const inStock = product.variants.some((v) => v.stock > 0)
+  const { add, remove, has } = useCompareStore()
+  const inCompare = has(product.id)
 
   return (
     <motion.article
@@ -83,21 +86,26 @@ export function ProductCard({ product }: ProductCardProps) {
           </p>
         </div>
 
-        <Button
-          size="sm"
-          className="mt-2 w-full gap-1.5"
-          disabled={!inStock}
-          asChild={inStock}
-        >
-          {inStock ? (
-            <Link href={`/products/${product.slug}`}>
-              <ShoppingBag className="h-4 w-4" />
-              Xem & Mua
-            </Link>
-          ) : (
-            <span>Hết hàng</span>
-          )}
-        </Button>
+        <div className="mt-2 flex gap-1.5">
+          <Button size="sm" className="flex-1 gap-1.5" disabled={!inStock} asChild={inStock}>
+            {inStock ? (
+              <Link href={`/products/${product.slug}`}>
+                <ShoppingBag className="h-4 w-4" /> Xem & Mua
+              </Link>
+            ) : (
+              <span>Hết hàng</span>
+            )}
+          </Button>
+          <Button
+            size="sm"
+            variant={inCompare ? 'default' : 'outline'}
+            className="px-2.5"
+            onClick={() => inCompare ? remove(product.id) : add(product)}
+            title={inCompare ? 'Bỏ so sánh' : 'Thêm vào so sánh'}
+          >
+            <GitCompare className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
     </motion.article>
   )
